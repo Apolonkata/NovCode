@@ -1,8 +1,108 @@
-{
-	"folders": [
-		{
-			"path": "."
-		}
-	],
-	"settings": {}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Register System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h1>Welcome Back</h1>
+            <form id="login-form">
+                <input type="email" id="login-email" placeholder="Email" required>
+                <input type="password" id="login-password" placeholder="Password" required>
+                <button type="submit" class="btn">Login</button>
+                <p class="toggle-form">Don't have an account? <span id="show-register">Register here</span></p>
+            </form>
+            <form id="register-form" style="display: none;">
+                <input type="email" id="register-email" placeholder="Email" required>
+                <input type="text" id="register-username" placeholder="Username" required>
+                <input type="password" id="register-password" placeholder="Password" required>
+                <button type="submit" class="btn">Register</button>
+                <p class="toggle-form">Already have an account? <span id="show-login">Login here</span></p>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>           
+
+
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(120deg, #f6d365, #fda085);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
+
+/* Container Styles */
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Form Styles */
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button.btn {
+    width: 100%;
+    padding: 10px;
+    background: #fda085;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+}
+
+button.btn:hover {
+    background: #f6d365;
+}
+
+.toggle-form {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+.toggle-form span {
+    color: #fda085;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+}
+
+// Switching between login and register forms
+document.getElementById("show-register").addEventListener("click", function () {
+    document.getElementById("login-form").style.display = "none";
+    document.getElementById("register-form").style.display = "block";
+});
+
+document.getElementById("show-login").addEventListener("click", function () {
+    document.getElementById("register-form").style.display = "none";
+    document.getElementById("login-form").style.display = "block";
+});
