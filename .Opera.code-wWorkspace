@@ -93,8 +93,11 @@ button.btn:hover {
 @media (max-width: 600px) {
     .container {
         padding: 20px;
-    }
-}
+    } 
+
+        TVA DOLO MI SCIPT.js 
+
+} 
 
 // Switching between login and register forms
 document.getElementById("show-register").addEventListener("click", function () {
