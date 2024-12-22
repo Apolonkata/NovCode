@@ -1,14 +1,24 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login/Register System</title>
+    <title>Login/Register</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>  
-    <div class="container">
+<body>
+    <header>
+        <div class="logo">My Website</div>
+        <div class="auth-buttons">
+            <a href="/login" class="login-btn">Login</a> 
+            <a href="/register" class="register-btn">Register</a>
+        </div>
+    </header>
+
+    <!-- Registration and Login Form here -->
+    <div class="form-container">
         <div class="form-box">
+            <!-- Login Form -->
             <h1>Welcome Back</h1>
             <form id="login-form">
                 <input type="email" id="login-email" placeholder="Email" required>
@@ -16,6 +26,8 @@
                 <button type="submit" class="btn">Login</button>
                 <p class="toggle-form">Don't have an account? <span id="show-register">Register here</span></p>
             </form>
+
+            <!-- Register Form (hidden by default) -->
             <form id="register-form" style="display: none;">
                 <input type="email" id="register-email" placeholder="Email" required>
                 <input type="text" id="register-username" placeholder="Username" required>
@@ -25,6 +37,7 @@
             </form>
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
