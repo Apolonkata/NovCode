@@ -12,3 +12,22 @@ function toggleMenu() {
     const menu = document.getElementById('menu-content');
     menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
 }
+function toggleMenu() {
+    const menu = document.getElementById('menu-content');
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+}
+
+document.getElementById('profile-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const profilePic = document.getElementById('profile-pic').files[0];
+    const bio = document.getElementById('bio').value;
+
+    if (profilePic) {
+        console.log(`Uploaded picture: ${profilePic.name}`);
+    }
+    if (bio) {
+        console.log(`Bio: ${bio}`);
+    }
+
+    alert('Profile updated!');
+});
