@@ -30,7 +30,7 @@ document.getElementById('profile-form').addEventListener('submit', (e) => {
     }
 
     alert('Profile updated!');
-});
+});  
 function toggleProfile() {
     const profileForm = document.getElementById('profile-form');
     // Toggle visibility of the profile customization form
