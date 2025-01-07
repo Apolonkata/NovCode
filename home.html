@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QuickChat Home</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
     <!-- Header Section -->
@@ -19,7 +20,7 @@
                 <div class="dropdown-content">
                     <a href="/profile">Edit Profile</a>
                     <a href="/settings">Settings</a>
-                    <a href="/logout">Logout</a>
+                    <a href="#" id="logout">Logout</a>
                 </div>
             </div>
         </nav>
@@ -34,7 +35,7 @@
         <section class="online-users">
             <h2>Online Users</h2>
             <div class="users-list">
-                <!-- Each user profile will be a card -->
+                <!-- Example user cards -->
                 <div class="user-card">
                     <img src="profile-pic1.jpg" alt="User 1" class="user-avatar">
                     <div class="user-info">
@@ -49,7 +50,6 @@
                         <button class="message-btn">Message</button>
                     </div>
                 </div>
-                <!-- Add more user cards dynamically -->
             </div>
         </section>
     </main>
@@ -59,79 +59,72 @@
         <p>&copy; 2024 QuickChat. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="menu-item" id="home">
+            <i class="fa fa-home"></i> Home
+        </div>
+        <div class="menu-item" id="messages">
+            <i class="fa fa-envelope"></i> Messages
+        </div>
+        <div class="menu-item" id="profile" onclick="toggleProfile()">
+            <i class="fa fa-user"></i> Profile
+        </div>
+        <div class="menu-item" id="settings">
+            <i class="fa fa-cogs"></i> Settings
+        </div>
+        <div class="menu-item" id="logout-sidebar">
+            <i class="fa fa-sign-out"></i> Logout
+        </div>
+    </div>
+
+    <!-- Profile Customization Form (Initially Hidden) -->
+    <div id="profile-form" class="profile-form" style="display: none;">
+        <form>
+            <label for="profile-pic">Upload Profile Picture:</label>
+            <input type="file" id="profile-pic" accept="image/*">
+            <label for="bio">Add Bio:</label>
+            <textarea id="bio" placeholder="Write something about yourself..."></textarea>
+            <button type="submit">Save</button>
+        </form>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Redirect unauthenticated users to the login page
+        if (!sessionStorage.getItem('loggedIn')) {
+            window.location.href = '/index.html'; // Redirect to login page
+        }
+
+        // Logout functionality
+        const logoutButtons = document.querySelectorAll('#logout, #logout-sidebar');
+        logoutButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                sessionStorage.removeItem('loggedIn'); // Clear session
+                window.location.href = '/index.html'; // Redirect to login page
+            });
+        });
+
+        // Toggle Profile Form
+        function toggleProfile() {
+            const profileForm = document.getElementById('profile-form');
+            profileForm.style.display = profileForm.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Toggle Dropdown Menu
+        const dropdownBtn = document.querySelector('.dropdown-btn');
+        const dropdownContent = document.querySelector('.dropdown-content');
+        dropdownBtn.addEventListener('click', () => {
+            dropdownContent.classList.toggle('show');
+        });
+
+        // Close dropdown when clicking outside
+        window.addEventListener('click', (event) => {
+            if (!event.target.matches('.dropdown-btn')) {
+                dropdownContent.classList.remove('show');
+            }
+        });
+    </script>
 </body>
 </html>
-<header>
-    <div class="menu">
-        <div class="menu-icon" onclick="toggleMenu()">☰</div>
-        <div class="menu-content" id="menu-content">
-            <a href="/home">Home</a>
-            <a href="/messages">Messages</a>
-            <a href="/profile">Profile</a>
-            <a href="/settings">Settings</a>
-            <a href="/logout">Logout</a>
-        </div>
-    </div>
-</header>
-<header>
-    <div class="menu">
-        <div class="menu-icon" onclick="toggleMenu()">⋮</div>
-        <div class="menu-content" id="menu-content">
-            <form id="profile-form">
-                <label for="profile-pic">Upload Profile Picture:</label>
-                <input type="file" id="profile-pic" accept="image/*">
-                <label for="bio">Add Bio:</label>
-                <textarea id="bio" placeholder="Write something about yourself..."></textarea>
-                <button type="submit" class="btn">Save</button>
-            </form>
-        </div>
-    </div>
-</header>
-<div class="sidebar">
-    <div class="menu-item" id="home">
-        <i class="fa fa-home"></i> Home
-    </div>
-    <div class="menu-item" id="messages">
-        <i class="fa fa-envelope"></i> Messages
-    </div>
-    <div class="menu-item" id="profile">
-        <i class="fa fa-user"></i> Profile
-    </div>
-    <div class="menu-item" id="settings">
-        <i class="fa fa-cogs"></i> Settings
-    </div>
-    <div class="menu-item" id="logout">
-        <i class="fa fa-sign-out"></i> Logout
-    </div>
-</div>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-<div class="sidebar">
-    <div class="menu-item" id="home">
-        <i class="fa fa-home"></i> Home
-    </div>
-    <div class="menu-item" id="messages">
-        <i class="fa fa-envelope"></i> Messages
-    </div>
-    <div class="menu-item" id="profile" onclick="toggleProfile()">
-        <i class="fa fa-user"></i> Profile
-    </div>
-    <div class="menu-item" id="settings">
-        <i class="fa fa-cogs"></i> Settings
-    </div>
-    <div class="menu-item" id="logout">
-        <i class="fa fa-sign-out"></i> Logout
-    </div>
-</div>
-
-<!-- Profile Customization Form (Initially Hidden) -->
-<div id="profile-form" class="profile-form" style="display: none;">
-    <form>
-        <label for="profile-pic">Upload Profile Picture:</label>
-        <input type="file" id="profile-pic" accept="image/*">
-        <label for="bio">Add Bio:</label>
-        <textarea id="bio" placeholder="Write something about yourself..."></textarea>
-        <button type="submit">Save</button>
-    </form>
-</div>
-<a href="/index.html">Log Out</a>
+ 
