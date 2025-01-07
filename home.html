@@ -12,7 +12,7 @@
     <header>
         <div class="logo">QuickChat</div>
         <nav class="nav-icons">
-            <a href="/home" class="nav-icon">🏠 Home</a>
+            <a href="/home.html" class="nav-icon">🏠 Home</a>
             <a href="/messages" class="nav-icon">📧 Messages</a>
             <a href="/payments" class="nav-icon">💰 Payments</a>
             <div class="dropdown">
@@ -30,28 +30,6 @@
     <main>
         <h1>Welcome to QuickChat!</h1>
         <p>Connect with people around the world.</p>
-
-        <!-- Online Users Section -->
-        <section class="online-users">
-            <h2>Online Users</h2>
-            <div class="users-list">
-                <!-- Example user cards -->
-                <div class="user-card">
-                    <img src="profile-pic1.jpg" alt="User 1" class="user-avatar">
-                    <div class="user-info">
-                        <p class="username">User1</p>
-                        <button class="message-btn">Message</button>
-                    </div>
-                </div>
-                <div class="user-card">
-                    <img src="profile-pic2.jpg" alt="User 2" class="user-avatar">
-                    <div class="user-info">
-                        <p class="username">User2</p>
-                        <button class="message-btn">Message</button>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
     <!-- Footer -->
@@ -59,72 +37,7 @@
         <p>&copy; 2024 QuickChat. All rights reserved.</p>
     </footer>
 
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <div class="menu-item" id="home">
-            <i class="fa fa-home"></i> Home
-        </div>
-        <div class="menu-item" id="messages">
-            <i class="fa fa-envelope"></i> Messages
-        </div>
-        <div class="menu-item" id="profile" onclick="toggleProfile()">
-            <i class="fa fa-user"></i> Profile
-        </div>
-        <div class="menu-item" id="settings">
-            <i class="fa fa-cogs"></i> Settings
-        </div>
-        <div class="menu-item" id="logout-sidebar">
-            <i class="fa fa-sign-out"></i> Logout
-        </div>
-    </div>
-
-    <!-- Profile Customization Form (Initially Hidden) -->
-    <div id="profile-form" class="profile-form" style="display: none;">
-        <form>
-            <label for="profile-pic">Upload Profile Picture:</label>
-            <input type="file" id="profile-pic" accept="image/*">
-            <label for="bio">Add Bio:</label>
-            <textarea id="bio" placeholder="Write something about yourself..."></textarea>
-            <button type="submit">Save</button>
-        </form>
-    </div>
-
-    <!-- JavaScript -->
-    <script>
-        // Redirect unauthenticated users to the login page
-        if (!sessionStorage.getItem('loggedIn')) {
-            window.location.href = '/index.html'; // Redirect to login page
-        }
-
-        // Logout functionality
-        const logoutButtons = document.querySelectorAll('#logout, #logout-sidebar');
-        logoutButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                sessionStorage.removeItem('loggedIn'); // Clear session
-                window.location.href = '/index.html'; // Redirect to login page
-            });
-        });
-
-        // Toggle Profile Form
-        function toggleProfile() {
-            const profileForm = document.getElementById('profile-form');
-            profileForm.style.display = profileForm.style.display === 'none' ? 'block' : 'none';
-        }
-
-        // Toggle Dropdown Menu
-        const dropdownBtn = document.querySelector('.dropdown-btn');
-        const dropdownContent = document.querySelector('.dropdown-content');
-        dropdownBtn.addEventListener('click', () => {
-            dropdownContent.classList.toggle('show');
-        });
-
-        // Close dropdown when clicking outside
-        window.addEventListener('click', (event) => {
-            if (!event.target.matches('.dropdown-btn')) {
-                dropdownContent.classList.remove('show');
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
- <script src="script.js"></script>
+ 
