@@ -10,8 +10,8 @@
     <header>
         <div class="logo">My Website</div>
         <div class="auth-buttons">
-            <a href="/login" class="login-btn">Login</a> 
-            <a href="/register" class="register-btn">Register</a>
+            <a href="#" class="login-btn">Login</a> 
+            <a href="#" class="register-btn">Register</a>
         </div>
     </header>
 
@@ -38,56 +38,7 @@
         </div>
     </div>
 
-    <!-- JavaScript for Form Handling -->
-    <script>
-        // Toggle between login and register forms
-        const loginForm = document.getElementById('login-form');
-        const registerForm = document.getElementById('register-form');
-        const showRegister = document.getElementById('show-register');
-        const showLogin = document.getElementById('show-login');
-
-        showRegister.addEventListener('click', () => {
-            loginForm.style.display = 'none';
-            registerForm.style.display = 'block';
-        });
-
-        showLogin.addEventListener('click', () => {
-            registerForm.style.display = 'none';
-            loginForm.style.display = 'block';
-        });
-
-        // Handle Login Form Submission
-        loginForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const email = document.getElementById('login-email').value;
-            const password = document.getElementById('login-password').value;
-
-            // Simulate login success
-            if (email && password) {
-                sessionStorage.setItem('loggedIn', 'true');
-                window.location.href = '/home.html'; // Redirect to home page
-            } else {
-                alert('Please enter valid credentials!');
-            }
-        });
-
-        // Handle Register Form Submission
-        registerForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const email = document.getElementById('register-email').value;
-            const username = document.getElementById('register-username').value;
-            const password = document.getElementById('register-password').value;
-
-            // Simulate successful registration
-            if (email && username && password) {
-                alert('Registration successful! Please log in.');
-                registerForm.style.display = 'none';
-                loginForm.style.display = 'block';
-            } else {
-                alert('Please fill in all fields!');
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
-<script src="script.js"></script>
+      
