@@ -36,3 +36,36 @@ function toggleProfile() {
     // Toggle visibility of the profile customization form
     profileForm.style.display = profileForm.style.display === 'block' ? 'none' : 'block';
 }
+// Redirect unauthenticated users to the login page
+if (!sessionStorage.getItem('loggedIn')) {
+    window.location.href = '/index.html'; // Redirect to login page
+}
+
+// Logout functionality
+const logoutButtons = document.querySelectorAll('#logout, #logout-sidebar');
+logoutButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        sessionStorage.removeItem('loggedIn'); // Clear session
+        window.location.href = '/index.html'; // Redirect to login page
+    });
+});
+
+// Toggle Profile Form
+function toggleProfile() {
+    const profileForm = document.getElementById('profile-form');
+    profileForm.style.display = profileForm.style.display === 'none' ? 'block' : 'none';
+}
+
+// Toggle Dropdown Menu
+const dropdownBtn = document.querySelector('.dropdown-btn');
+const dropdownContent = document.querySelector('.dropdown-content');
+dropdownBtn.addEventListener('click', () => {
+    dropdownContent.classList.toggle('show');
+});
+
+// Close dropdown when clicking outside
+window.addEventListener('click', (event) => {
+    if (!event.target.matches('.dropdown-btn')) {
+        dropdownContent.classList.remove('show');
+    }
+});
