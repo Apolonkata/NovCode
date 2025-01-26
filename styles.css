@@ -56,3 +56,31 @@ footer {
   bottom: 0;
   width: 100%;
 }
+/* Header Styles */
+header {
+  background-color: #333; /* Dark background for contrast */
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Space between logo and menu icon */
+}
+
+header .logo {
+  height: 50px; /* Adjust the size of the logo */
+}
+
+header .menu-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 25px;
+  cursor: pointer;
+}
+
+header .menu-icon div {
+  background-color: #fff;
+  height: 4px;
+  width: 30px;
+  border-radius: 2px; /* Slightly round the lines */
+}
