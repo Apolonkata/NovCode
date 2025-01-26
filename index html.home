@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NekoConnect</title>
-  <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
+  <link rel="stylesheet" href="styles.css"> <!-- Link external CSS -->
 </head>
 <body>
   <!-- Header Section -->
   <header>
-    <img src="your-logo-path.png" alt="NekoConnect Logo">
+    <img src="NekoConnect-Logo.jpg" alt="NekoConnect Logo">
     <h1>NekoConnect</h1>
   </header>
 
