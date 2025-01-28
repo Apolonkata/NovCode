@@ -11,11 +11,12 @@ body {
 header { 
   background-color: #b0b0b0; /* Adjusted to match icon color */
   color: #fff;
-  padding: 10px 20px;
+  padding: 15px 25px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 4px solid #a5a5a5; /* Softer line, matching the icon */
+  font-size: 1.8rem;
 }
 
 .header-left {
@@ -24,8 +25,14 @@ header {
 }
 
 .header-left .logo {
-  height: 55px; /* Slightly resized for better balance */
-  margin-right: 10px;
+  height: 70px; /* Increased size for better visibility */
+  margin-right: 15px;
+}
+
+.site-name {
+  font-size: 2rem; /* Larger text for better visibility */
+  font-weight: bold;
+  color: #fff;
 }
 
 /* Menu Icon */
@@ -33,14 +40,14 @@ header .menu-icon {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 25px;
+  height: 30px;
   cursor: pointer;
 }
 
 header .menu-icon div {
   background-color: #fff;
-  height: 4px;
-  width: 30px;
+  height: 5px;
+  width: 35px;
   border-radius: 2px;
 }
 
@@ -48,16 +55,17 @@ header .menu-icon div {
 .main {
   padding: 20px;
   text-align: center;
+  font-size: 1.5rem; /* Increased text size */
 }
 
 /* Anime Thumbnail */
 .anime-thumbnail {
   display: inline-block;
   margin: 10px;
-  padding: 10px;
+  padding: 15px;
   background: #fff;
-  border-radius: 5px;
-  width: 150px;
+  border-radius: 8px;
+  width: 180px;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
