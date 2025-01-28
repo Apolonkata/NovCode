@@ -23,14 +23,8 @@ header {
 }
 
 .header-left .logo {
-  height: 50px; /* Adjust the size of the logo */
-  margin-right: 10px; /* Space between logo and name */
-}
-
-.header-left .site-name {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #fff;
+  height: 60px; /* Increased logo size */
+  margin-right: 10px;
 }
 
 header .menu-icon {
@@ -45,7 +39,7 @@ header .menu-icon div {
   background-color: #fff;
   height: 4px;
   width: 30px;
-  border-radius: 2px; /* Slightly round the lines */
+  border-radius: 2px;
 }
 
 /* Main Content */
@@ -54,10 +48,7 @@ header .menu-icon div {
   text-align: center;
 }
 
-.main h2 {
-  color: #444;
-}
-
+/* Anime Thumbnail */
 .anime-thumbnail {
   display: inline-block;
   margin: 10px;
