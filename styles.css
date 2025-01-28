@@ -3,18 +3,19 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background-color: #e0e0e0; /* Updated silver/gray color */
+  background-color: #d8d8d8; /* Adjusted to match icon */
   color: #333;
 }
 
 /* Header Styles */
-header {
-  background-color: #333; /* Dark background for contrast */
+header { 
+  background-color: #b0b0b0; /* Adjusted to match icon color */
   color: #fff;
   padding: 10px 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Space between logo and menu icon */
+  justify-content: space-between;
+  border-bottom: 4px solid #a5a5a5; /* Softer line, matching the icon */
 }
 
 .header-left {
@@ -23,10 +24,11 @@ header {
 }
 
 .header-left .logo {
-  height: 60px; /* Increased logo size */
+  height: 55px; /* Slightly resized for better balance */
   margin-right: 10px;
 }
 
+/* Menu Icon */
 header .menu-icon {
   display: flex;
   flex-direction: column;
