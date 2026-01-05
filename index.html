@@ -1,167 +1,642 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bg">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World - Basic HTML</title>
+    <title>AntiqueBG - Онлайн списание за стари книги</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Georgia', 'Times New Roman', serif;
         }
         
         body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #f0f7ff;
-            color: #333;
-            padding: 20px;
-            text-align: center;
+            background-color: #f9f5ee;
+            color: #3e2723;
+            line-height: 1.6;
         }
         
         .container {
-            max-width: 800px;
-            width: 100%;
-            background-color: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 100, 255, 0.1);
-            padding: 40px;
-            margin: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
         
-        h1 {
-            color: #0066ff;
+        /* Header Styles */
+        header {
+            background-color: #5d4037;
+            color: #fff;
+            padding: 20px 0;
+            border-bottom: 5px solid #d7ccc8;
+        }
+        
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .logo {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #ffcc80;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            font-size: 2.5rem;
+        }
+        
+        .search-bar {
+            display: flex;
+            width: 400px;
+        }
+        
+        .search-bar input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            font-size: 1rem;
+        }
+        
+        .search-bar button {
+            background-color: #ffcc80;
+            color: #5d4037;
+            border: none;
+            padding: 0 20px;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .search-bar button:hover {
+            background-color: #ffb74d;
+        }
+        
+        .user-actions {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .user-actions a {
+            color: #ffcc80;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .user-actions a:hover {
+            color: #fff;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            gap: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #8d6e63;
+        }
+        
+        nav a {
+            color: #ffcc80;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        
+        nav a:hover, nav a.active {
+            background-color: #6d4c41;
+            color: #fff;
+        }
+        
+        /* Main Content */
+        .hero {
+            background: linear-gradient(rgba(93, 64, 55, 0.85), rgba(93, 64, 55, 0.9)), url('https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            color: #ffcc80;
         }
         
-        .hello-text {
-            font-size: 5rem;
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #ffcc80;
+            color: #5d4037;
+            padding: 15px 35px;
+            text-decoration: none;
             font-weight: bold;
-            color: #ff3366;
-            margin: 30px 0;
-            text-shadow: 3px 3px 0 #ffdddd;
-            animation: pulse 2s infinite;
-        }
-        
-        .subtitle {
-            font-size: 1.4rem;
-            color: #555;
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-        
-        .code-container {
-            background-color: #f8f9fa;
-            border-radius: 10px;
-            padding: 25px;
-            margin: 30px 0;
-            text-align: left;
-            border-left: 5px solid #0066ff;
-            font-family: 'Courier New', monospace;
-            overflow-x: auto;
-        }
-        
-        .code-container h3 {
-            color: #333;
-            margin-bottom: 15px;
             font-size: 1.2rem;
+            border-radius: 4px;
+            transition: all 0.3s;
         }
         
-        pre {
-            color: #0066ff;
-            font-size: 1.1rem;
-            line-height: 1.5;
+        .cta-button:hover {
+            background-color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
-        .explanation {
-            text-align: left;
-            background-color: #f0f9ff;
+        /* Categories Section */
+        .categories-section {
+            margin-bottom: 60px;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: #5d4037;
+            margin-bottom: 40px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #d7ccc8;
+        }
+        
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+        }
+        
+        .category-card {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border: 1px solid #d7ccc8;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .category-header {
+            background-color: #5d4037;
+            color: #fff;
             padding: 20px;
-            border-radius: 10px;
-            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
-        .explanation h3 {
-            color: #0066cc;
-            margin-bottom: 15px;
+        .category-name {
+            font-size: 1.4rem;
+            font-weight: bold;
         }
         
-        .explanation ul {
-            padding-left: 20px;
-            line-height: 1.6;
-        }
-        
-        .explanation li {
-            margin-bottom: 8px;
-        }
-        
-        .footer {
-            margin-top: 30px;
-            color: #666;
+        .auction-count {
+            background-color: #ffcc80;
+            color: #5d4037;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: bold;
             font-size: 0.9rem;
         }
         
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+        .category-icon {
+            background-color: #efebe9;
+            text-align: center;
+            padding: 25px;
+            font-size: 3rem;
+            color: #8d6e63;
         }
         
-        @media (max-width: 600px) {
-            h1 { font-size: 2.5rem; }
-            .hello-text { font-size: 3.5rem; }
-            .container { padding: 25px; }
+        .category-description {
+            padding: 20px;
+            font-size: 1rem;
+            color: #5d4037;
+        }
+        
+        /* Featured Books */
+        .featured-books {
+            margin-bottom: 60px;
+        }
+        
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .book-card {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border: 1px solid #d7ccc8;
+        }
+        
+        .book-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .book-image {
+            height: 200px;
+            background-color: #8d6e63;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 4rem;
+        }
+        
+        .book-info {
+            padding: 20px;
+        }
+        
+        .book-title {
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #5d4037;
+        }
+        
+        .book-author {
+            color: #8d6e63;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        
+        .book-price {
+            color: #388e3c;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #5d4037;
+            color: #fff;
+            padding: 40px 0 20px;
+            margin-top: 40px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            color: #ffcc80;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #d7ccc8;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: #ffcc80;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #8d6e63;
+            color: #d7ccc8;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .header-top {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .search-bar {
+                width: 100%;
+                max-width: 500px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .categories-grid, .books-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Basic HTML "Hello World" Example</h1>
-        
-        <p class="subtitle">This is a simple HTML page demonstrating the classic "Hello World" program with clean, modern styling.</p>
-        
-        <div class="hello-text">Hello, World!</div>
-        
-        <div class="code-container">
-            <h3>The HTML Code for This Page:</h3>
-            <pre>&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-    &lt;title&gt;Hello World&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;h1&gt;Hello, World!&lt;/h1&gt;
-    &lt;p&gt;This is my first HTML page.&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;</pre>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">
+                    <i class="fas fa-book-open"></i>
+                    AntiqueBG
+                </div>
+                
+                <div class="search-bar">
+                    <input type="text" placeholder="Търсете стари книги, автори, издатели...">
+                    <button><i class="fas fa-search"></i> Търси</button>
+                </div>
+                
+                <div class="user-actions">
+                    <a href="#"><i class="fas fa-user"></i> Вход</a>
+                    <a href="#"><i class="fas fa-heart"></i> Любими</a>
+                    <a href="#"><i class="fas fa-shopping-cart"></i> Количка</a>
+                </div>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Начало</a></li>
+                    <li><a href="#">Аукциони</a></li>
+                    <li><a href="#">Категории</a></li>
+                    <li><a href="#">Статии</a></li>
+                    <li><a href="#">За нас</a></li>
+                    <li><a href="#">Контакти</a></li>
+                </ul>
+            </nav>
         </div>
-        
-        <div class="explanation">
-            <h3>What is this HTML code doing?</h3>
-            <ul>
-                <li><strong>&lt;!DOCTYPE html&gt;</strong> - Tells the browser this is an HTML5 document</li>
-                <li><strong>&lt;html lang="en"&gt;</strong> - The root element of the page, with language set to English</li>
-                <li><strong>&lt;head&gt;</strong> - Contains metadata and links to external resources</li>
-                <li><strong>&lt;meta charset="UTF-8"&gt;</strong> - Sets the character encoding to UTF-8</li>
-                <li><strong>&lt;title&gt;</strong> - Sets the title that appears in the browser tab</li>
-                <li><strong>&lt;body&gt;</strong> - Contains all the visible content of the webpage</li>
-                <li><strong>&lt;h1&gt;</strong> - A heading element (largest heading level)</li>
-                <li><strong>&lt;p&gt;</strong> - A paragraph element for text content</li>
-            </ul>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>AntiqueBG - Онлайн списание за стари книги</h1>
+            <p>Открийте света на антикварните книги, ръкописи и литературни съкровища. Присъединете се към нашата общност от колекционери, изследователи и любители на старата литература.</p>
+            <a href="#" class="cta-button">Разгледайте аукционите</a>
         </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Categories Section (inspired by your image) -->
+        <section class="categories-section">
+            <h2 class="section-title">Основни категории</h2>
+            
+            <div class="categories-grid">
+                <!-- Category 1 -->
+                <div class="category-card">
+                    <div class="category-header">
+                        <div class="category-name">Колекциониране</div>
+                        <div class="auction-count">531 аукциона</div>
+                    </div>
+                    <div class="category-icon">
+                        <i class="fas fa-chess-queen"></i>
+                    </div>
+                    <div class="category-description">
+                        Рядки колекционерски издания, първи издания, автографи и уникални книжни предмети за сериозните колекционери.
+                    </div>
+                </div>
+                
+                <!-- Category 2 -->
+                <div class="category-card">
+                    <div class="category-header">
+                        <div class="category-name">Българска литература</div>
+                        <div class="auction-count">34 896 аукциона</div>
+                    </div>
+                    <div class="category-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="category-description">
+                        Класическа и съвременна българска литература, поезия, драматургия и литературни списания от различни епохи.
+                    </div>
+                </div>
+                
+                <!-- Category 3 -->
+                <div class="category-card">
+                    <div class="category-header">
+                        <div class="category-name">Изкуство, Музика</div>
+                        <div class="auction-count">30 661 аукциона</div>
+                    </div>
+                    <div class="category-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <div class="category-description">
+                        Албуми с изкуство, книги за музика, ноти, биографии на композитори и художници, както и специализирани издания.
+                    </div>
+                </div>
+                
+                <!-- Category 4 -->
+                <div class="category-card">
+                    <div class="category-header">
+                        <div class="category-name">Научна литература</div>
+                        <div class="auction-count">160 127 аукциона</div>
+                    </div>
+                    <div class="category-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <div class="category-description">
+                        Стари научни книги, дисертации, академични издания и специализирани текстове от различни научни области.
+                    </div>
+                </div>
+                
+                <!-- Category 5 -->
+                <div class="category-card">
+                    <div class="category-header">
+                        <div class="category-name">Електроника, Техника</div>
+                        <div class="auction-count">8 705 аукциона</div>
+                    </div>
+                    <div class="category-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="category-description">
+                        Стари книги по електроника, техника, инженерство и технологии, отражаващи развитието на техническите науки.
+                    </div>
+                </div>
+                
+                <!-- Category 6 -->
+                <div class="category-card">
+                    <div class="category-header">
+                        <div class="category-name">Дом, Градина</div>
+                        <div class="auction-count">7 537 аукциона</div>
+                    </div>
+                    <div class="category-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="category-description">
+                        Стари книги за домакинство, градинарство, готварство и занаяти, които разкриват бита от минали времена.
+                    </div>
+                </div>
+            </div>
+        </section>
         
-        <div class="footer">
-            <p>This page is built with pure HTML and CSS. Save this code in a file with a <strong>.html</strong> extension and open it in any browser.</p>
+        <!-- Featured Books Section -->
+        <section class="featured-books">
+            <h2 class="section-title">Препоръчани книги</h2>
+            
+            <div class="books-grid">
+                <!-- Book 1 -->
+                <div class="book-card">
+                    <div class="book-image">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="book-info">
+                        <div class="book-title">"Под игото" - първо издание</div>
+                        <div class="book-author">Иван Вазов</div>
+                        <div class="book-price">1 850 лв.</div>
+                    </div>
+                </div>
+                
+                <!-- Book 2 -->
+                <div class="book-card">
+                    <div class="book-image">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="book-info">
+                        <div class="book-title">"Бай Ганьо" - 1914 г.</div>
+                        <div class="book-author">Алеко Константинов</div>
+                        <div class="book-price">1 200 лв.</div>
+                    </div>
+                </div>
+                
+                <!-- Book 3 -->
+                <div class="book-card">
+                    <div class="book-image">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="book-info">
+                        <div class="book-title">Български народни песни</div>
+                        <div class="book-author">Сборник, 1890 г.</div>
+                        <div class="book-price">2 300 лв.</div>
+                    </div>
+                </div>
+                
+                <!-- Book 4 -->
+                <div class="book-card">
+                    <div class="book-image">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="book-info">
+                        <div class="book-title">"Железният светилник"</div>
+                        <div class="book-author">Димитър Талев, 1952 г.</div>
+                        <div class="book-price">950 лв.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>AntiqueBG</h3>
+                    <p>Онлайн списание и аукционна платформа за стари книги и литературни антики. Създадено с любов към книгата и уважение към литературното наследство.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Бързи връзки</h3>
+                    <ul>
+                        <li><a href="#">За нас</a></li>
+                        <li><a href="#">Често задавани въпроси</a></li>
+                        <li><a href="#">Условия за ползване</a></li>
+                        <li><a href="#">Политика за поверителност</a></li>
+                        <li><a href="#">Контакти</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Категории</h3>
+                    <ul>
+                        <li><a href="#">Колекциониране</a></li>
+                        <li><a href="#">Българска литература</a></li>
+                        <li><a href="#">Изкуство и музика</a></li>
+                        <li><a href="#">Научна литература</a></li>
+                        <li><a href="#">Електроника и техника</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Свържете се с нас</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> София, ул. "Книжовна" №12</li>
+                        <li><i class="fas fa-phone"></i> +359 888 123 456</li>
+                        <li><i class="fas fa-envelope"></i> info@antiquebg.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 AntiqueBG - Всички права запазени. | Създадено с <i class="fas fa-heart"></i> за любителите на старите книги</p>
+            </div>
         </div>
-    </div>
+    </footer>
+
+    <script>
+        // Simple search functionality
+        document.querySelector('.search-bar button').addEventListener('click', function() {
+            const searchTerm = document.querySelector('.search-bar input').value;
+            if (searchTerm.trim() !== '') {
+                alert('Търсене за: ' + searchTerm + '\nТова е демонстрация. В реален сайт това ще предизвика търсене в базата данни.');
+            }
+        });
+        
+        // Enter key search
+        document.querySelector('.search-bar input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                document.querySelector('.search-bar button').click();
+            }
+        });
+        
+        // Category card click
+        document.querySelectorAll('.category-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const categoryName = this.querySelector('.category-name').textContent;
+                alert('Избрахте категория: ' + categoryName + '\nТова би ви пренесло на страница с всички книги от тази категория.');
+            });
+        });
+    </script>
 </body>
 </html>
