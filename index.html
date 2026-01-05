@@ -1,32 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NekoConnect</title>
-  <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World - Basic HTML</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f7ff;
+            color: #333;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 100, 255, 0.1);
+            padding: 40px;
+            margin: 20px;
+        }
+        
+        h1 {
+            color: #0066ff;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hello-text {
+            font-size: 5rem;
+            font-weight: bold;
+            color: #ff3366;
+            margin: 30px 0;
+            text-shadow: 3px 3px 0 #ffdddd;
+            animation: pulse 2s infinite;
+        }
+        
+        .subtitle {
+            font-size: 1.4rem;
+            color: #555;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .code-container {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: left;
+            border-left: 5px solid #0066ff;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        
+        .code-container h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        pre {
+            color: #0066ff;
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+        
+        .explanation {
+            text-align: left;
+            background-color: #f0f9ff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        
+        .explanation h3 {
+            color: #0066cc;
+            margin-bottom: 15px;
+        }
+        
+        .explanation ul {
+            padding-left: 20px;
+            line-height: 1.6;
+        }
+        
+        .explanation li {
+            margin-bottom: 8px;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        @media (max-width: 600px) {
+            h1 { font-size: 2.5rem; }
+            .hello-text { font-size: 3.5rem; }
+            .container { padding: 25px; }
+        }
+    </style>
 </head>
 <body>
-  <!-- Header Section -->
-  <header>
-    <div class="header-left">
-      <img src="https://raw.githubusercontent.com/Apolonkata/NovCode/main/NekoConect%20Logo.jpg" alt="NekoConnect Logo" class="logo">
-      <span class="site-name">NekoConnect</span>
+    <div class="container">
+        <h1>Basic HTML "Hello World" Example</h1>
+        
+        <p class="subtitle">This is a simple HTML page demonstrating the classic "Hello World" program with clean, modern styling.</p>
+        
+        <div class="hello-text">Hello, World!</div>
+        
+        <div class="code-container">
+            <h3>The HTML Code for This Page:</h3>
+            <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Hello World&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello, World!&lt;/h1&gt;
+    &lt;p&gt;This is my first HTML page.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+        </div>
+        
+        <div class="explanation">
+            <h3>What is this HTML code doing?</h3>
+            <ul>
+                <li><strong>&lt;!DOCTYPE html&gt;</strong> - Tells the browser this is an HTML5 document</li>
+                <li><strong>&lt;html lang="en"&gt;</strong> - The root element of the page, with language set to English</li>
+                <li><strong>&lt;head&gt;</strong> - Contains metadata and links to external resources</li>
+                <li><strong>&lt;meta charset="UTF-8"&gt;</strong> - Sets the character encoding to UTF-8</li>
+                <li><strong>&lt;title&gt;</strong> - Sets the title that appears in the browser tab</li>
+                <li><strong>&lt;body&gt;</strong> - Contains all the visible content of the webpage</li>
+                <li><strong>&lt;h1&gt;</strong> - A heading element (largest heading level)</li>
+                <li><strong>&lt;p&gt;</strong> - A paragraph element for text content</li>
+            </ul>
+        </div>
+        
+        <div class="footer">
+            <p>This page is built with pure HTML and CSS. Save this code in a file with a <strong>.html</strong> extension and open it in any browser.</p>
+        </div>
     </div>
-    <div class="menu-icon">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </header>
-
-  <!-- Main Content -->
-  <div class="main">
-    <!-- Removed Welcome Text -->
-    <div class="anime-thumbnail">
-      <img src="https://via.placeholder.com/120x160" alt="">
-    </div>
-  </div>
 </body>
 </html>
-
