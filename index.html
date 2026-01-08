@@ -226,21 +226,93 @@
             to {opacity: 1}
         }
         
+        /* Icon Menu Section - Replaces the text description */
+        .icon-menu-section {
+            margin: 50px 0;
+            padding: 30px 0;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .icon-menu-title {
+            text-align: center;
+            font-size: 2rem;
+            color: #2980b9;
+            margin-bottom: 40px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #3498db;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .icon-menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            padding: 0 20px;
+        }
+        
+        .icon-menu-item {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 25px 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+        
+        .icon-menu-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(52, 152, 219, 0.15);
+            border-color: #3498db;
+        }
+        
+        .icon-menu-icon {
+            font-size: 3rem;
+            color: #3498db;
+            margin-bottom: 15px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .icon-menu-name {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .icon-menu-count {
+            color: #2980b9;
+            font-weight: bold;
+            font-size: 1.1rem;
+            background-color: #ecf0f1;
+            padding: 5px 15px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+        
         /* Main Content */
         .hero-text {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
             padding: 0 20px;
         }
         
         .hero-text h1 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             margin-bottom: 20px;
             color: #2980b9;
         }
         
         .hero-text p {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             max-width: 800px;
             margin: 0 auto 30px;
             color: #2c3e50;
@@ -482,7 +554,11 @@
             }
             
             .hero-text h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
+            }
+            
+            .icon-menu-grid {
+                grid-template-columns: repeat(3, 1fr);
             }
         }
         
@@ -517,6 +593,26 @@
             
             .hero-text p {
                 font-size: 1.1rem;
+            }
+            
+            .icon-menu-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            
+            .icon-menu-title {
+                font-size: 1.7rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .icon-menu-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .icon-menu-item {
+                max-width: 300px;
+                margin: 0 auto;
             }
         }
     </style>
@@ -594,6 +690,123 @@
         </div>
     </div>
 
+    <!-- Icon Menu Section - Replaces the text description -->
+    <section class="icon-menu-section">
+        <div class="container">
+            <h2 class="icon-menu-title">Основни категории</h2>
+            
+            <div class="icon-menu-grid">
+                <!-- Category 1 -->
+                <div class="icon-menu-item" onclick="location.href='#';">
+                    <div class="icon-menu-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <div class="icon-menu-name">Колекциониране</div>
+                    <div class="icon-menu-count">53,934 аукциона</div>
+                </div>
+                
+                <!-- Category 2 -->
+                <div class="icon-menu-item" onclick="location.href='#';">
+                    <div class="icon-menu-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <div class="icon-menu-name">Бижута, Часовници</div>
+                    <div class="icon-menu-count">53,374 аукциона</div>
+                </div>
+                
+                <!-- Category 3 -->
+                <div class="icon-menu-item" onclick="location.href='#';">
+                    <div class="icon-menu-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <div class="icon-menu-name">Изкуство, Музика</div>
+                    <div class="icon-menu-count">26,778 аукциона</div>
+                </div>
+                
+                <!-- Category 4 -->
+                <div class="icon-menu-item" onclick="location.href='#';">
+                    <div class="icon-menu-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="icon-menu-name">Книжарница</div>
+                    <div class="icon-menu-count">108,668 аукциона</div>
+                </div>
+                
+                <!-- Category 5 -->
+                <div class="icon-menu-item" onclick="location.href='#';">
+                    <div class="icon-menu-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <div class="icon-menu-name">Електроника, Техника</div>
+                    <div class="icon-menu-count">6,720 аукциона</div>
+                </div>
+                
+                <!-- Category 6 -->
+                <div class="icon-menu-item" onclick="location.href='#';">
+                    <div class="icon-menu-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="icon-menu-name">Дом, Градина</div>
+                    <div class="icon-menu-count">7,366 аукциона</div>
+                </div>
+                
+                <!-- Category 7 -->
+                <div class="icon-menu-item" onclick="location.href='#';">
+                    <div class="icon-menu-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <div class="icon-menu-name">Авто-Мото-Вело</div>
+                    <div class="icon-menu-count">3,332 аукциона</div>
+                </div>
+                
+                <!-- Category 8 -->
+                <div class="icon-menu-item" onclick="location.href='#';">
+                    <div class="icon-menu-icon">
+                        <i class="fas fa-futbol"></i>
+                    </div>
+                    <div class="icon-menu-name">Спорт, Развлечения</div>
+                    <div class="icon-menu-count">3,375 аукциона</div>
+                </div>
+                
+                <!-- Category 9 -->
+                <div class="icon-menu-item" onclick="location.href='#';">
+                    <div class="icon-menu-icon">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <div class="icon-menu-name">Мода, Облекло</div>
+                    <div class="icon-menu-count">3,533 аукциона</div>
+                </div>
+                
+                <!-- Category 10 -->
+                <div class="icon-menu-item" onclick="location.href='#';">
+                    <div class="icon-menu-icon">
+                        <i class="fas fa-child"></i>
+                    </div>
+                    <div class="icon-menu-name">Детски стоки</div>
+                    <div class="icon-menu-count">147 аукциона</div>
+                </div>
+                
+                <!-- Category 11 -->
+                <div class="icon-menu-item" onclick="location.href='#';">
+                    <div class="icon-menu-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <div class="icon-menu-name">Сувенири, Подаръци</div>
+                    <div class="icon-menu-count">4,642 аукциона</div>
+                </div>
+                
+                <!-- Category 12 -->
+                <div class="icon-menu-item" onclick="location.href='#';">
+                    <div class="icon-menu-icon">
+                        <i class="fas fa-ellipsis-h"></i>
+                    </div>
+                    <div class="icon-menu-name">Други категории</div>
+                    <div class="icon-menu-count">2,514 аукциона</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Main Content -->
     <main class="container">
         <!-- Hero Text -->
@@ -603,9 +816,9 @@
             <a href="#" class="cta-button">Разгледайте аукционите</a>
         </section>
         
-        <!-- Categories Section (inspired by your image) -->
+        <!-- Categories Section (existing one can stay or be removed) -->
         <section class="categories-section">
-            <h2 class="section-title">Основни категории</h2>
+            <h2 class="section-title">Най-търсени категории книги</h2>
             
             <div class="categories-grid">
                 <!-- Category 1 -->
@@ -615,7 +828,7 @@
                         <div class="auction-count">531 аукциона</div>
                     </div>
                     <div class="category-icon">
-                        <i class="fas fa-chess-queen"></i>
+                        <i class="fas fa-crown"></i>
                     </div>
                     <div class="category-description">
                         Рядки колекционерски издания, първи издания, автографи и уникални книжни предмети за сериозните колекционери.
@@ -647,48 +860,6 @@
                     </div>
                     <div class="category-description">
                         Албуми с изкуство, книги за музика, ноти, биографии на композитори и художници, както и специализирани издания.
-                    </div>
-                </div>
-                
-                <!-- Category 4 -->
-                <div class="category-card">
-                    <div class="category-header">
-                        <div class="category-name">Научна литература</div>
-                        <div class="auction-count">160 127 аукциона</div>
-                    </div>
-                    <div class="category-icon">
-                        <i class="fas fa-microscope"></i>
-                    </div>
-                    <div class="category-description">
-                        Стари научни книги, дисертации, академични издания и специализирани текстове от различни научни области.
-                    </div>
-                </div>
-                
-                <!-- Category 5 -->
-                <div class="category-card">
-                    <div class="category-header">
-                        <div class="category-name">Електроника, Техника</div>
-                        <div class="auction-count">8 705 аукциона</div>
-                    </div>
-                    <div class="category-icon">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <div class="category-description">
-                        Стари книги по електроника, техника, инженерство и технологии, отражаващи развитието на техническите науки.
-                    </div>
-                </div>
-                
-                <!-- Category 6 -->
-                <div class="category-card">
-                    <div class="category-header">
-                        <div class="category-name">Дом, Градина</div>
-                        <div class="auction-count">7 537 аукциона</div>
-                    </div>
-                    <div class="category-icon">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <div class="category-description">
-                        Стари книги за домакинство, градинарство, готварство и занаяти, които разкриват бита от минали времена.
                     </div>
                 </div>
             </div>
@@ -852,17 +1023,4 @@
         // Enter key search
         document.querySelector('.search-bar input').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
-                document.querySelector('.search-bar button').click();
-            }
-        });
-        
-        // Category card click
-        document.querySelectorAll('.category-card').forEach(card => {
-            card.addEventListener('click', function() {
-                const categoryName = this.querySelector('.category-name').textContent;
-                alert('Избрахте категория: ' + categoryName + '\nТова би ви пренесло на страница с всички книги от тази категория.');
-            });
-        });
-    </script>
-</body>
-</html>
+                document.querySelector('.search-bar button
