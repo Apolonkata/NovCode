@@ -58,33 +58,54 @@
     <section class="hero-section">
         <div class="container">
             <div class="hero-carousel">
+                <!-- Slide 1 - Antique Books -->
                 <div class="hero-slide active">
                     <div class="hero-content">
                         <h2>Антикварни книги</h2>
                         <p>Редки издания и колекции</p>
+                        <button class="hero-btn">Разгледайте книгите</button>
                     </div>
                     <div class="hero-image">
-                        <i class="fas fa-book-open"></i>
+                        <img src="https://i.imgur.com/DTozGJD.jpg" alt="Антикварни книги и ръкописи" class="hero-img">
+                        <!-- Fallback icon if image doesn't load -->
+                        <div class="image-fallback">
+                            <i class="fas fa-book-open"></i>
+                        </div>
                     </div>
                 </div>
+                
+                <!-- Slide 2 - Collectible Items -->
                 <div class="hero-slide">
                     <div class="hero-content">
                         <h2>Колекционерски предмети</h2>
                         <p>Уникални артефакти и съкровища</p>
+                        <button class="hero-btn">Вижте колекциите</button>
                     </div>
                     <div class="hero-image">
-                        <i class="fas fa-gem"></i>
+                        <img src="https://i.imgur.com/Lf6xXZn.jpg" alt="Колекционерски монети и антики" class="hero-img">
+                        <!-- Fallback icon if image doesn't load -->
+                        <div class="image-fallback">
+                            <i class="fas fa-gem"></i>
+                        </div>
                     </div>
                 </div>
+                
+                <!-- Slide 3 - Vintage Electronics -->
                 <div class="hero-slide">
                     <div class="hero-content">
                         <h2>Винтидж техника</h2>
                         <p>Ретро електроника и апаратура</p>
+                        <button class="hero-btn">Разгледайте техниката</button>
                     </div>
                     <div class="hero-image">
-                        <i class="fas fa-camera-retro"></i>
+                        <img src="https://i.imgur.com/NlJH9Bt.jpg" alt="Ретро камера и електроника" class="hero-img">
+                        <!-- Fallback icon if image doesn't load -->
+                        <div class="image-fallback">
+                            <i class="fas fa-camera-retro"></i>
+                        </div>
                     </div>
                 </div>
+                
                 <!-- Carousel Controls -->
                 <button class="carousel-btn prev-btn" id="prevBtn">
                     <i class="fas fa-chevron-left"></i>
@@ -92,6 +113,7 @@
                 <button class="carousel-btn next-btn" id="nextBtn">
                     <i class="fas fa-chevron-right"></i>
                 </button>
+                
                 <!-- Carousel Indicators -->
                 <div class="carousel-indicators">
                     <span class="indicator active" data-slide="0"></span>
