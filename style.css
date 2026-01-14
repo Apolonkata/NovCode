@@ -185,7 +185,7 @@ body {
   background-size: cover;
   background-position: center;
   display: flex;
-  align-items: center;
+  align-items: flex-end; /* CHANGE: from center to flex-end */
 }
 
 .hero-slide.active {
@@ -200,6 +200,7 @@ body {
   border-radius: 12px;
   max-width: 420px;
   margin-left: 40px;
+  margin-bottom: 40px; /* ADD: Space from bottom */
 }
 
 .hero-btn {
@@ -250,7 +251,6 @@ body {
 .indicator.active {
   background: #c9a14a;
 }
-
 /* === Categories Section === */
 .categories-section {
     padding: 50px 0;
