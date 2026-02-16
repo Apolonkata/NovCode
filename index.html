@@ -1,416 +1,51 @@
 <!DOCTYPE html>
 <html lang="bg">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AntiuqBG - Онлайн магазин за антикварни книги и колекционерски предмети">
-    <title>AntiuqBG - Антикварни книги и колекционерски предмети</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AntiquBG</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <!-- Top Info Bar -->
-    <div class="top-bar">
-        <div class="container">
-            <p>Използваме "бисквитки" за да предоставяме услугите си и за анализиране на трафика</p>
-        </div>
+
+<header class="hero">
+  <div class="hero-content">
+    <h1>AntiquBG</h1>
+    <p>Антикварни книги и съкровища</p>
+    <a href="#" class="btn">Разгледай колекцията</a>
+  </div>
+</header>
+
+<section class="section">
+  <h2>Подбрани находки</h2>
+
+  <div class="grid">
+    <div class="card">
+      <img src="item1.jpg">
+      <h3>Сребърна брошка</h3>
+      <span>320 лв</span>
     </div>
 
-    <!-- Main Header -->
-    <header class="main-header">
-        <div class="container">
-            <div class="header-content">
-                <!-- Logo -->
-                <div class="logo">
-                    <h1>Antiuq<span>BG</span></h1>
-                    <p class="tagline">Антикварни съкровища</p>
-                </div>
-
-                <!-- Search Bar -->
-                <div class="search-container">
-                    <input type="text" placeholder="Търсене в 70,000+ артикула..." class="search-input">
-                    <button class="search-btn">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </div>
-
-                <!-- Header Actions -->
-                <div class="header-actions">
-                    <button class="action-btn" id="languageBtn">
-                        <i class="fas fa-globe"></i>
-                        <span>BG</span>
-                    </button>
-                    <button class="action-btn" id="profileBtn">
-                        <i class="fas fa-user"></i>
-                        <span>Профил</span>
-                    </button>
-                    <button class="action-btn btn-primary" id="addItemBtn">
-                        <i class="fas fa-plus-circle"></i>
-                        <span>Нов аукцион</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Hero Section with Carousel -->
-<section class="hero-section">
-  <div class="container">
-    <div class="hero-carousel">
-
-      <div class="hero-slide active" style="background-image:url('https://i.imgur.com/Us8RrWA.jpeg')">
-        <div class="hero-content">
-          <h2>Антикварни книги</h2>
-          <p>Редки издания и колекции</p>
-          <button class="hero-btn">Разгледайте книгите</button>
-        </div>
-      </div>
-
-      <div class="hero-slide" style="background-image:url('https://i.imgur.com//lLaeJgk.jpeg')">
-        <div class="hero-content">
-          <h2>Колекционерски предмети</h2>
-          <p>Уникални артефакти и съкровища</p>
-          <button class="hero-btn">Вижте колекциите</button>
-        </div>
-      </div>
-
-      <div class="hero-slide" style="background-image:url('https://i.imgur.com/fBGDXIJ.jpeg')">
-        <div class="hero-content">
-          <h2>Винтидж техника</h2>
-          <p>Ретро електроника и апаратура</p>
-          <button class="hero-btn">Разгледайте техниката</button>
-        </div>
-      </div>
-
-      <button class="carousel-btn prev-btn" id="prevBtn">
-        <i class="fas fa-chevron-left"></i>
-      </button>
-      <button class="carousel-btn next-btn" id="nextBtn">
-        <i class="fas fa-chevron-right"></i>
-      </button>
-
-      <div class="carousel-indicators">
-        <span class="indicator active" data-slide="0"></span>
-        <span class="indicator" data-slide="1"></span>
-        <span class="indicator" data-slide="2"></span>
-      </div>
-
+    <div class="card">
+      <img src="item2.jpg">
+      <h3>Старинна книга</h3>
+      <span>95 лв</span>
     </div>
   </div>
 </section>
 
-    <!-- Categories Section -->
-    <section class="categories-section">
-        <div class="container">
-            <h2 class="section-title">Основни категории</h2>
-            <div class="categories-grid">
-                <!-- Category 1: Колекциониране -->
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-coins"></i>
-                    </div>
-                    <h3>Колекциониране</h3>
-                    <p class="item-count">23,502 артикула</p>
-                </div>
+<section class="story">
+  <h2>Историята зад предметите</h2>
+  <p>
+  Всяка вещ носи минало. Ние го съхраняваме.
+  </p>
+</section>
 
-                <!-- Category 2: Бижута, Часовници -->
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <h3>Бижута, Часовници</h3>
-                    <p class="item-count">12,340 артикула</p>
-                </div>
+<footer>
+<p>© AntiquBG</p>
+</footer>
 
-                <!-- Category 3: Изкуство, Музика -->
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <h3>Изкуство, Музика</h3>
-                    <p class="item-count">8,765 артикула</p>
-                </div>
-
-                <!-- Category 4: Книжарница -->
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-book"></i>
-                    </div>
-                    <h3>Книжарница</h3>
-                    <p class="item-count">19,250 артикула</p>
-                </div>
-
-                <!-- Category 5: Електроника, Техника -->
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-plug"></i>
-                    </div>
-                    <h3>Електроника, Техника</h3>
-                    <p class="item-count">5,890 артикула</p>
-                </div>
-
-                <!-- Category 6: Дом, Градина -->
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <h3>Дом, Градина</h3>
-                    <p class="item-count">7,123 артикула</p>
-                </div>
-
-                <!-- Category 7: ...и други -->
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-ellipsis-h"></i>
-                    </div>
-                    <h3>...и други</h3>
-                    <p class="item-count">Вижте всички</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Items Section -->
-    <section class="featured-items-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Препоръчани артикули</h2>
-                <a href="#" class="view-all-link">Виж всички <i class="fas fa-arrow-right"></i></a>
-            </div>
-
-            <div class="items-grid">
-                <!-- Item 1 -->
-                <div class="item-card">
-                    <div class="item-image">
-                        <div class="item-badge">Нов</div>
-                        <div class="item-placeholder">
-                            <i class="fas fa-book"></i>
-                        </div>
-                    </div>
-                    <div class="item-content">
-                        <h3 class="item-title">Първо издание "Под игото" - Иван Вазов</h3>
-                        <p class="item-description">Рядко първо издание от 1894 година</p>
-                        <div class="item-footer">
-                            <span class="item-price">850 лв</span>
-                            <button class="btn-view">Виж повече</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 2 -->
-                <div class="item-card">
-                    <div class="item-image">
-                        <div class="item-badge hot">Горещо</div>
-                        <div class="item-placeholder">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                    </div>
-                    <div class="item-content">
-                        <h3 class="item-title">Златен джобен часовник - 19 век</h3>
-                        <p class="item-description">Швейцарско производство с гравюра</p>
-                        <div class="item-footer">
-                            <span class="item-price">1,200 лв</span>
-                            <button class="btn-view">Виж повече</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 3 -->
-                <div class="item-card">
-                    <div class="item-image">
-                        <div class="item-placeholder">
-                            <i class="fas fa-coins"></i>
-                        </div>
-                    </div>
-                    <div class="item-content">
-                        <h3 class="item-title">Колекция стари монети</h3>
-                        <p class="item-description">Български монети 1880-1940 г.</p>
-                        <div class="item-footer">
-                            <span class="item-price">450 лв</span>
-                            <button class="btn-view">Виж повече</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 4 -->
-                <div class="item-card">
-                    <div class="item-image">
-                        <div class="item-placeholder">
-                            <i class="fas fa-image"></i>
-                        </div>
-                    </div>
-                    <div class="item-content">
-                        <h3 class="item-title">Оригинална картина - Владимир Димитров</h3>
-                        <p class="item-description">Майсторът, 1920-те години</p>
-                        <div class="item-footer">
-                            <span class="item-price">3,500 лв</span>
-                            <button class="btn-view">Виж повече</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 5 -->
-                <div class="item-card">
-                    <div class="item-image">
-                        <div class="item-placeholder">
-                            <i class="fas fa-camera-retro"></i>
-                        </div>
-                    </div>
-                    <div class="item-content">
-                        <h3 class="item-title">Ретро фотоапарат Zenit</h3>
-                        <p class="item-description">Съветско производство, работещ</p>
-                        <div class="item-footer">
-                            <span class="item-price">180 лв</span>
-                            <button class="btn-view">Виж повече</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 6 -->
-                <div class="item-card">
-                    <div class="item-image">
-                        <div class="item-placeholder">
-                            <i class="fas fa-record-vinyl"></i>
-                        </div>
-                    </div>
-                    <div class="item-content">
-                        <h3 class="item-title">Виолини плочи - класическа музика</h3>
-                        <p class="item-description">Колекция от 15 плочи</p>
-                        <div class="item-footer">
-                            <span class="item-price">95 лв</span>
-                            <button class="btn-view">Виж повече</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 7 -->
-                <div class="item-card">
-                    <div class="item-image">
-                        <div class="item-badge">Нов</div>
-                        <div class="item-placeholder">
-                            <i class="fas fa-gem"></i>
-                        </div>
-                    </div>
-                    <div class="item-content">
-                        <h3 class="item-title">Сребърна брошка с перли</h3>
-                        <p class="item-description">Ръчна изработка, началото на 20 век</p>
-                        <div class="item-footer">
-                            <span class="item-price">320 лв</span>
-                            <button class="btn-view">Виж повече</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 8 -->
-                <div class="item-card">
-                    <div class="item-image">
-                        <div class="item-placeholder">
-                            <i class="fas fa-map"></i>
-                        </div>
-                    </div>
-                    <div class="item-content">
-                        <h3 class="item-title">Стара карта на България</h3>
-                        <p class="item-description">От 1912 година, рамкирана</p>
-                        <div class="item-footer">
-                            <span class="item-price">280 лв</span>
-                            <button class="btn-view">Виж повече</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 9 -->
-                <div class="item-card">
-                    <div class="item-image">
-                        <div class="item-placeholder">
-                            <i class="fas fa-chess"></i>
-                        </div>
-                    </div>
-                    <div class="item-content">
-                        <h3 class="item-title">Антикварен шахматен комплект</h3>
-                        <p class="item-description">Дърворезба, пълен комплект</p>
-                        <div class="item-footer">
-                            <span class="item-price">420 лв</span>
-                            <button class="btn-view">Виж повече</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 10 -->
-                <div class="item-card">
-                    <div class="item-image">
-                        <div class="item-placeholder">
-                            <i class="fas fa-guitar"></i>
-                        </div>
-                    </div>
-                    <div class="item-content">
-                        <h3 class="item-title">Класическа китара - винтидж</h3>
-                        <p class="item-description">Испанско производство, 1960-те</p>
-                        <div class="item-footer">
-                            <span class="item-price">680 лв</span>
-                            <button class="btn-view">Виж повече</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="main-footer">
-        <div class="container">
-            <div class="footer-content">
-                <!-- Footer Column 1 -->
-                <div class="footer-column">
-                    <h3>AntiuqBG</h3>
-                    <p>Вашият надежден партньор за антикварни книги и колекционерски предмети в България.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                    </div>
-                </div>
-
-                <!-- Footer Column 2 -->
-                <div class="footer-column">
-                    <h4>Бързи връзки</h4>
-                    <ul>
-                        <li><a href="#">За нас</a></li>
-                        <li><a href="#">Как работи</a></li>
-                        <li><a href="#">Условия за ползване</a></li>
-                        <li><a href="#">Поверителност</a></li>
-                    </ul>
-                </div>
-
-                <!-- Footer Column 3 -->
-                <div class="footer-column">
-                    <h4>Категории</h4>
-                    <ul>
-                        <li><a href="#">Колекциониране</a></li>
-                        <li><a href="#">Книжарница</a></li>
-                        <li><a href="#">Бижута, Часовници</a></li>
-                        <li><a href="#">Електроника</a></li>
-                    </ul>
-                </div>
-
-                <!-- Footer Column 4 -->
-                <div class="footer-column">
-                    <h4>Контакти</h4>
-                    <ul>
-                        <li><i class="fas fa-envelope"></i> info@antiuqbg.com</li>
-                        <li><i class="fas fa-phone"></i> +359 2 XXX XXXX</li>
-                        <li><i class="fas fa-map-marker-alt"></i> София, България</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2024 AntiuqBG. Всички права запазени.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- JavaScript -->
-    <script src="script.js"></script>
 </body>
-</html>
+      </html>
