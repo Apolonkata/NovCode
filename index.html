@@ -1,75 +1,562 @@
 <!DOCTYPE html>
-<html lang="bg">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AntiquBG</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AntiquBG · heritage style</title>
+  <!-- Font Awesome 6 (free) for icons & menu/shop symbols -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+    }
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+    body {
+      background: #f7f3ee;
+      color: #2e241f;
+      line-height: 1.5;
+    }
 
+    /* main container */
+    .shop-wrapper {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 1.2rem 2rem 3rem;
+    }
+
+    /* --- HEADER with icon menu, search, shop icon --- */
+    .top-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem 1rem;
+      margin-bottom: 2rem;
+      border-bottom: 2px solid #dacbbd;
+      padding-bottom: 1rem;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo-icon {
+      font-size: 2rem;
+      color: #8b6f4c;
+    }
+
+    .logo-text {
+      font-size: 1.8rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      color: #3f2e1e;
+    }
+    .logo-text span {
+      font-size: 1rem;
+      font-style: italic;
+      color: #7a5d3d;
+      margin-left: 0.2rem;
+    }
+
+    /* ICON MENU (Колекционерство, Бижута …) */
+    .icon-menu {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem 1.4rem;
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+    .icon-menu a {
+      text-decoration: none;
+      color: #3f2e1e;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 0;
+      border-bottom: 2px solid transparent;
+      transition: 0.2s;
+    }
+    .icon-menu a i {
+      color: #8b6f4c;
+      font-size: 1.3rem;
+      width: 1.6rem;
+      text-align: center;
+    }
+    .icon-menu a:hover {
+      border-bottom-color: #b09372;
+      color: #1f1610;
+    }
+
+    /* right side: search + shop icon */
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    /* search bar (open style) */
+    .search-wrap {
+      display: flex;
+      align-items: center;
+      background: white;
+      border-radius: 60px;
+      padding: 0.3rem 0.3rem 0.3rem 1.2rem;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.03);
+      border: 1px solid #dccfc4;
+      min-width: 240px;
+    }
+    .search-wrap i {
+      color: #9b846b;
+      font-size: 1.1rem;
+    }
+    .search-wrap input {
+      border: none;
+      background: transparent;
+      padding: 0.5rem 0.5rem 0.5rem 0.8rem;
+      font-size: 1rem;
+      width: 160px;
+      outline: none;
+    }
+    .search-wrap button {
+      background: #8b6f4c;
+      border: none;
+      color: white;
+      padding: 0.5rem 1.2rem;
+      border-radius: 40px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: 0.15s;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      letter-spacing: 0.3px;
+    }
+    .search-wrap button:hover {
+      background: #6d5336;
+    }
+
+    /* shop icon (shopping bag) */
+    .shop-icon {
+      position: relative;
+      font-size: 1.8rem;
+      color: #3f2e1e;
+      transition: 0.2s;
+    }
+    .shop-icon i {
+      font-size: 2rem;
+    }
+    .shop-icon .badge {
+      position: absolute;
+      top: -5px;
+      right: -10px;
+      background: #b35e3a;
+      color: white;
+      font-size: 0.7rem;
+      font-weight: bold;
+      padding: 0.2rem 0.55rem;
+      border-radius: 30px;
+      border: 2px solid #f7f3ee;
+    }
+
+    /* ----- HERO SLIDER (simple CSS-only, with images) ----- */
+    .hero-slider {
+      margin: 2rem 0 3rem;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 15px 25px -8px rgba(0,0,0,0.2);
+      background: #3b2d21;
+    }
+
+    .slides {
+      display: flex;
+      aspect-ratio: 16 / 7;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+      background: #2c1f15;
+      /* hide scrollbar but keep functionality (optional) */
+      scrollbar-width: thin;
+      scrollbar-color: #b09372 #3b2d21;
+    }
+    .slides::-webkit-scrollbar {
+      height: 8px;
+    }
+    .slides::-webkit-scrollbar-thumb {
+      background: #b09372;
+      border-radius: 20px;
+    }
+    .slides::-webkit-scrollbar-track {
+      background: #3b2d21;
+    }
+
+    .slide {
+      scroll-snap-align: start;
+      flex: 0 0 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-size: cover;
+      background-position: center 30%;
+      position: relative;
+    }
+
+    /* slide images (built as background + overlay) */
+    .slide1 { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1461360228754-6e81c478b882?w=1200&auto=format'); }
+    .slide2 { background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1605721912195-46e80e7b28d4?w=1200&auto=format'); }
+    .slide3 { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1547994773-8e5b262e1ab9?w=1200&auto=format'); }
+    /* fallback background if unsplash blocked — but they will work */
+    .slide {
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .slide-content {
+      color: white;
+      text-align: center;
+      max-width: 600px;
+      padding: 1.5rem;
+      text-shadow: 2px 2px 5px #1a130e;
+    }
+    .slide-content h2 {
+      font-size: 3rem;
+      font-weight: 400;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+    }
+    .slide-content p {
+      font-size: 1.3rem;
+      font-style: italic;
+    }
+    .slide-content .btn-slide {
+      display: inline-block;
+      margin-top: 1.5rem;
+      background: #dbbc94;
+      border: none;
+      padding: 0.8rem 2.5rem;
+      border-radius: 40px;
+      color: #241b14;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: 0.2s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    .slide-content .btn-slide:hover {
+      background: #ebcfae;
+    }
+
+    /* slide navigation dots */
+    .slider-nav {
+      display: flex;
+      justify-content: center;
+      gap: 0.8rem;
+      margin-top: 0.8rem;
+    }
+    .slider-nav a {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #cbb59b;
+      transition: 0.2s;
+    }
+    .slider-nav a:hover {
+      background: #8b6f4c;
+    }
+
+    /* section title "Подбрани находки" */
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin: 3rem 0 1.8rem;
+    }
+    .section-head h3 {
+      font-size: 2.2rem;
+      font-weight: 350;
+      color: #3b2b1d;
+      letter-spacing: 1px;
+      border-left: 7px solid #b09372;
+      padding-left: 1.2rem;
+    }
+    .section-head a {
+      color: #6f543b;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    /* ITEM CARDS (подбрани находки) */
+    .item-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2.2rem 1.8rem;
+    }
+
+    .item-card {
+      background: white;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(87, 62, 42, 0.08);
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: 1px solid #e7dbcf;
+    }
+    .item-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 28px -6px rgba(70, 45, 25, 0.2);
+    }
+
+    .card-img {
+      height: 240px;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      padding: 0.8rem;
+    }
+    .img-tag {
+      background: #ede0d3ee;
+      color: #3b2b1d;
+      padding: 0.2rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      backdrop-filter: blur(2px);
+    }
+
+    /* image backgrounds (rich antique vibe) */
+    .img-brooch { background-image: url('https://images.unsplash.com/photo-1611085583191-218c62b4cdd5?w=600&auto=format'); }  /* vintage brooch */
+    .img-book { background-image: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=600&auto=format'); }    /* antique book */
+    .img-clock { background-image: url('https://images.unsplash.com/photo-1585597047897-23e61b1bc383?w=600&auto=format'); }   /* pocket watch */
+    .img-vase { background-image: url('https://images.unsplash.com/photo-1578500351865-d6c3706f46bc?w=600&auto=format'); }    /* ceramic / antique */
+
+    .card-info {
+      padding: 1.5rem 1.5rem 1.8rem;
+    }
+    .card-info h4 {
+      font-size: 1.6rem;
+      font-weight: 350;
+      color: #2e241f;
+      margin-bottom: 0.3rem;
+    }
+    .card-info .desc {
+      color: #6f5b48;
+      font-size: 0.95rem;
+      margin: 0.5rem 0 1rem;
+      line-height: 1.4;
+    }
+    .price-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .price {
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: #2f4b3c;  /* subtle dark green */
+    }
+    .price small {
+      font-size: 1rem;
+      font-weight: 300;
+      color: #846b54;
+    }
+    .cart-add {
+      background: #dbbc94;
+      border: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      color: #2f241b;
+      font-size: 1.3rem;
+      cursor: pointer;
+      transition: 0.15s;
+      box-shadow: 0 4px 6px #dbcdbe;
+    }
+    .cart-add:hover {
+      background: #c5a179;
+      transform: scale(1.07);
+    }
+
+    /* footer hint */
+    .footer-note {
+      margin-top: 4rem;
+      text-align: center;
+      color: #917b64;
+      border-top: 1px dashed #d4c3b3;
+      padding-top: 2rem;
+      font-size: 0.95rem;
+    }
+    .footer-note i {
+      color: #b1825c;
+    }
+
+    /* responsive touches */
+    @media (max-width: 750px) {
+      .top-bar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .icon-menu {
+        justify-content: center;
+      }
+      .actions {
+        justify-content: center;
+      }
+      .slide-content h2 { font-size: 2.2rem; }
+    }
+  </style>
 </head>
 <body>
+<div class="shop-wrapper">
+  <!-- header: icon menu + search + shop icon exactly as requested -->
+  <div class="top-bar">
+    <div class="logo-area">
+      <i class="fas fa-crown logo-icon"></i>
+      <div class="logo-text">AntiquBG <span>• estate & antique</span></div>
+    </div>
 
-<!-- TOP BAR -->
+    <!-- icon menu (Колекционерство, Бижута, Часовници, Книги, Електроника) with fontawesome icons -->
+    <div class="icon-menu">
+      <a href="#"><i class="fas fa-box-open"></i> Колекционерство</a>
+      <a href="#"><i class="fas fa-gem"></i> Бижута</a>
+      <a href="#"><i class="far fa-clock"></i> Часовници</a>
+      <a href="#"><i class="fas fa-book"></i> Книги</a>
+      <a href="#"><i class="fas fa-radio"></i> Електроника</a>
+    </div>
 
-<header class="topbar">
-  <span class="logo">AntiquBG</span>
-
-  <div class="icons">
-    🔍
-    🛒
+    <div class="actions">
+      <!-- open search bar (with icon + input + button) -->
+      <div class="search-wrap">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Търси ...">
+        <button type="button"><i class="fas fa-arrow-right"></i> Намери</button>
+      </div>
+      <!-- shop icon (shopping bag) with dummy badge -->
+      <div class="shop-icon">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="badge">3</span>
+      </div>
+    </div>
   </div>
-</header>
 
-<!-- HERO SLIDER -->
+  <!-- HERO SLIDER with three images + content (CSS scroll) -->
+  <div class="hero-slider">
+    <div class="slides">
+      <!-- slide 1: vintage jewellery / brooch theme -->
+      <div class="slide slide1" id="slide-1">
+        <div class="slide-content">
+          <h2>Антикварни съкровища</h2>
+          <p>Бижута с история от минали векове</p>
+          <a href="#" class="btn-slide">Разгледай <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <!-- slide 2: old books / library -->
+      <div class="slide slide2" id="slide-2">
+        <div class="slide-content">
+          <h2>Редки издания</h2>
+          <p>Първи печати, подписани екземпляри</p>
+          <a href="#" class="btn-slide">Колекция книги <i class="fas fa-book-open"></i></a>
+        </div>
+      </div>
+      <!-- slide 3: clocks & watches -->
+      <div class="slide slide3" id="slide-3">
+        <div class="slide-content">
+          <h2>Часовници & джобни реликви</h2>
+          <p>Механични шедьоври от 19-ти век</p>
+          <a href="#" class="btn-slide">Разгледай часовници</a>
+        </div>
+      </div>
+    </div>
+    <!-- slide navigation dots (clickable anchors) -->
+    <div class="slider-nav">
+      <a href="#slide-1"></a>
+      <a href="#slide-2"></a>
+      <a href="#slide-3"></a>
+    </div>
+  </div>
 
-<section class="hero">
-  <div class="slide active" style="background-image:url(hero1.jpg)"></div>
-  <div class="slide" style="background-image:url(hero2.jpg)"></div>
-</section>
+  <!-- "Подбрани находки" section (featured items) -->
+  <div class="section-head">
+    <h3>Подбрани находки</h3>
+    <a href="#">виж всички <i class="fas fa-chevron-right"></i></a>
+  </div>
 
-<!-- CATEGORY ICON MENU -->
+  <!-- item grid – exactly with description + price. also added one extra for richness -->
+  <div class="item-grid">
+    <!-- сребърна брошка (silver brooch) -->
+    <div class="item-card">
+      <div class="card-img img-brooch">
+        <span class="img-tag">Бижута</span>
+      </div>
+      <div class="card-info">
+        <h4>Сребърна брошка</h4>
+        <div class="desc">Ръчна изработка, флорални мотиви, позлатени елементи</div>
+        <div class="price-row">
+          <span class="price">320 <small>лв</small></span>
+          <button class="cart-add" aria-label="add to cart"><i class="fas fa-plus"></i></button>
+        </div>
+      </div>
+    </div>
 
-<section class="categories">
+    <!-- антикварна книга (antique book) -->
+    <div class="item-card">
+      <div class="card-img img-book">
+        <span class="img-tag">Книги</span>
+      </div>
+      <div class="card-info">
+        <h4>Антикварна книга</h4>
+        <div class="desc">Илюстровано издание, 1892 г., кожена подвързия, запазена</div>
+        <div class="price-row">
+          <span class="price">95 <small>лв</small></span>
+          <button class="cart-add" aria-label="add to cart"><i class="fas fa-plus"></i></button>
+        </div>
+      </div>
+    </div>
 
-<div class="cat">🏺<span>Колекционерство</span></div>
-<div class="cat">💍<span>Бижута</span></div>
-<div class="cat">⌚<span>Часовници</span></div>
-<div class="cat">📚<span>Книги</span></div>
-<div class="cat">📻<span>Електроника</span></div>
+    <!-- джобен часовник (pocket watch) – допълнителен, за да има живот -->
+    <div class="item-card">
+      <div class="card-img img-clock">
+        <span class="img-tag">Часовници</span>
+      </div>
+      <div class="card-info">
+        <h4>Джобен часовник</h4>
+        <div class="desc">Сребърен корпус, ръчно навиване, работещ механизъм, Виена 1910</div>
+        <div class="price-row">
+          <span class="price">580 <small>лв</small></span>
+          <button class="cart-add" aria-label="add to cart"><i class="fas fa-plus"></i></button>
+        </div>
+      </div>
+    </div>
 
-</section>
+    <!-- антична ваза (extra item with electronics? not really but fits коллекционерство) -->
+    <div class="item-card">
+      <div class="card-img img-vase">
+        <span class="img-tag">Колекционерство</span>
+      </div>
+      <div class="card-info">
+        <h4>Порцеланова ваза</h4>
+        <div class="desc">Ръчно рисувана, стил ар нуво, виенска фабрика, около 1905</div>
+        <div class="price-row">
+          <span class="price">445 <small>лв</small></span>
+          <button class="cart-add" aria-label="add to cart"><i class="fas fa-plus"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<!-- PRODUCTS -->
-
-<section class="products">
-
-<h2>Подбрани находки</h2>
-
-<div class="grid">
-
-<div class="card">
-<img src="item1.jpg">
-<h3>Сребърна брошка</h3>
-<p>320 лв</p>
+  <!-- small footer with copyright mention from original -->
+  <div class="footer-note">
+    <i class="far fa-copyright"></i> AntiquaBG — колекционерски предмети, бижута, часовници, книги & електроника. 
+    Вдъхновено от антикварни пазари.
+  </div>
 </div>
-
-<div class="card">
-<img src="item2.jpg">
-<h3>Антикварна книга</h3>
-<p>95 лв</p>
-</div>
-
-</div>
-
-</section>
-
-<footer>
-© AntiquBG
-</footer>
-
-<script src="slider.js"></script>
-
+<!-- end wrapper -->
 </body>
-</html>
+  </html>
